@@ -45,7 +45,6 @@ public class BallControl : MonoBehaviour
                 started = true;
             }
         }
-
         if (!Physics.Raycast(transform.position, Vector3.down, 1f))
         {
             gameOver = true;
@@ -68,6 +67,14 @@ public class BallControl : MonoBehaviour
         else if (rb.velocity.x > 0)
         {
             rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
+        }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Daimond")
+        {
+            Destroy(col.gameObject);
         }
     }
 }

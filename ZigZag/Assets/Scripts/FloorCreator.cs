@@ -3,7 +3,8 @@
 public class FloorCreator : MonoBehaviour
 {
     public Transform floor;
-    
+    public Transform diamond;
+
     Vector3 lastPosition;
     float size;
     void Start()
@@ -39,6 +40,8 @@ public class FloorCreator : MonoBehaviour
         {
             SpawnZ();
         }
+           
+        
     }
 
     void SpawnX()
@@ -47,6 +50,13 @@ public class FloorCreator : MonoBehaviour
         pos.x += size;
         lastPosition = pos;
         Instantiate(floor, pos, Quaternion.identity);
+
+        int rand = Random.Range(0, 4);
+
+        if (rand > 2 )
+        {
+            Instantiate(diamond,  new Vector3 (pos.x, pos.y + 1, pos.z),  diamond.transform.rotation);
+        }
     }
 
     void SpawnZ()
@@ -55,5 +65,12 @@ public class FloorCreator : MonoBehaviour
         pos.z += size;
         lastPosition = pos;
         Instantiate(floor, pos, Quaternion.identity);
+
+        int rand = Random.Range(0, 4);
+
+        if (rand > 2)
+        {
+            Instantiate(diamond, new Vector3(pos.x, pos.y + 1, pos.z), diamond.transform.rotation);
+        }
     }
 }

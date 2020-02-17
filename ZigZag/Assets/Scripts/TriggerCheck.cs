@@ -29,4 +29,6 @@ public class TriggerCheck : MonoBehaviour
         Destroy(transform.parent.gameObject, 2f);
         
     }
+
+    
 }
