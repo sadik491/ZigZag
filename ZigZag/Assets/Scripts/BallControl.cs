@@ -5,13 +5,14 @@ public class BallControl : MonoBehaviour
 {
     public Rigidbody rb;
     public float speed;
+    bool gameOver;
     bool started;
-    
     float screenWidth;
 
     void Start()
     {
         started = false;
+        gameOver = false;
         screenWidth = Screen.width;
     }
 
@@ -45,11 +46,16 @@ public class BallControl : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (!Physics.Raycast(transform.position, Vector3.down, 1f))
+        {
+            gameOver = true;
+            Camera.main.GetComponent<FollowCam>().gameOver = true;
+        }
+
+        if (Input.GetMouseButtonDown(0) && !gameOver)
         {
             SwitchDirection();
         }
-        
 
     }
 
