@@ -15,6 +15,7 @@ public class BallControl : MonoBehaviour
         started = false;
         gameOver = false;
         screenWidth = Screen.width;
+        UIManager.instence.Welcome();
     }
 
    
@@ -44,12 +45,15 @@ public class BallControl : MonoBehaviour
             {
                 rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
                 started = true;
+
+                GameManager.instence.StartGame();
             }
         }
         if (!Physics.Raycast(transform.position, Vector3.down, 1f))
         {
             gameOver = true;
             Camera.main.GetComponent<FollowCam>().gameOver = true;
+            GameManager.instence.GameOver();
         }
 
         if (Input.GetMouseButtonDown(0) && !gameOver)
