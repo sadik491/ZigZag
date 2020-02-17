@@ -8,6 +8,7 @@ public class BallControl : MonoBehaviour
     bool gameOver;
     bool started;
     float screenWidth;
+    public GameObject partical;
 
     void Start()
     {
@@ -74,7 +75,9 @@ public class BallControl : MonoBehaviour
     {
         if (col.gameObject.tag == "Daimond")
         {
+            GameObject part = Instantiate(partical, col.transform.position, Quaternion.identity);
             Destroy(col.gameObject);
+            Destroy(part, 1f);
         }
     }
 }
