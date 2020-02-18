@@ -7,46 +7,45 @@ public class BallControl : MonoBehaviour
     public float speed;
     bool gameOver;
     bool started;
-    float screenWidth;
+    //float screenWidth;
     public GameObject partical;
 
     void Start()
     {
         started = false;
         gameOver = false;
-        screenWidth = Screen.width;
+        //screenWidth = Screen.width;
         UIManager.instence.Welcome();
     }
 
    
     void Update()
     {
+        Touch touch = Input.GetTouch(0);
 
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            if (Input.touchCount > 0)
+        
+        if (Input.touchCount > 0 && !started)
             {
-                if (Input.GetTouch(0).position.x < screenWidth)
-                {
-                    //left
-                    //rb.velocity = new Vector3(speed * Time.deltaTime, 0, speed * Time.deltaTime);
-                    if (!started)
-                    {
-                            rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
-                            started = true;
+                rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
+                started = true;
 
-                            GameManager.instence.StartGame();
-                    }
-                }
-                else
-                {
-                    //right
-                    //rb.velocity = new Vector3(-100f * Time.deltaTime, 0, speed * Time.deltaTime);
-                }
+                GameManager.instence.StartGame();
             }
+        
+
+        if (!Physics.Raycast(transform.position, Vector3.down, 1f))
+        {
+            gameOver = true;
+            Camera.main.GetComponent<FollowCam>().gameOver = true;
+            GameManager.instence.GameOver();
         }
 
-        if (!started)
+        if (touch.deltaTime > 0 && !gameOver)
+        {
+                SwitchDirection();
+        }
+
+        /*if (!started)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -56,6 +55,7 @@ public class BallControl : MonoBehaviour
                 GameManager.instence.StartGame();
             }
         }
+
         if (!Physics.Raycast(transform.position, Vector3.down, 1f))
         {
             gameOver = true;
@@ -63,10 +63,11 @@ public class BallControl : MonoBehaviour
             GameManager.instence.GameOver();
         }
 
+
         if (Input.GetMouseButtonDown(0) && !gameOver)
         {
             SwitchDirection();
-        }
+        }*/
 
     }
 
