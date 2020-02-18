@@ -29,12 +29,19 @@ public class BallControl : MonoBehaviour
                 if (Input.GetTouch(0).position.x < screenWidth)
                 {
                     //left
-                    rb.velocity = new Vector3(speed * Time.deltaTime, 0, speed * Time.deltaTime);
+                    //rb.velocity = new Vector3(speed * Time.deltaTime, 0, speed * Time.deltaTime);
+                    if (!started)
+                    {
+                            rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
+                            started = true;
+
+                            GameManager.instence.StartGame();
+                    }
                 }
                 else
                 {
                     //right
-                    rb.velocity = new Vector3(-100f * Time.deltaTime, 0, speed * Time.deltaTime);
+                    //rb.velocity = new Vector3(-100f * Time.deltaTime, 0, speed * Time.deltaTime);
                 }
             }
         }
