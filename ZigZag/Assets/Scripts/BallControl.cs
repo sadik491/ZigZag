@@ -7,7 +7,6 @@ public class BallControl : MonoBehaviour
     public float speed;
     bool gameOver;
     bool started;
-    //float screenWidth;
     public GameObject partical;
 
     void Start()
@@ -40,7 +39,7 @@ public class BallControl : MonoBehaviour
             GameManager.instence.GameOver();
         }
 
-        if (touch.deltaTime > 0 && !gameOver)
+        if (touch.phase == TouchPhase.Began && !gameOver)
         {
                 SwitchDirection();
         }
