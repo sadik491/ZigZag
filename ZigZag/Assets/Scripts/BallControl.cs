@@ -20,53 +20,28 @@ public class BallControl : MonoBehaviour
    
     void Update()
     {
-        Touch touch = Input.GetTouch(0);
-
-        
-        if (Input.touchCount > 0 && !started)
-            {
-                rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
-                started = true;
-
-                GameManager.instence.StartGame();
-            }
-        
 
         if (!Physics.Raycast(transform.position, Vector3.down, 1f))
         {
             gameOver = true;
             Camera.main.GetComponent<FollowCam>().gameOver = true;
+            rb.velocity = new Vector3(0, -25f, 0);
             GameManager.instence.GameOver();
+        }
+
+        Touch touch = Input.GetTouch(0);
+
+        if (Input.touchCount > 0 && !started)
+        {
+            rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
+            started = true;
+            GameManager.instence.StartGame();
         }
 
         if (touch.phase == TouchPhase.Began && !gameOver)
         {
                 SwitchDirection();
         }
-
-        /*if (!started)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
-                started = true;
-
-                GameManager.instence.StartGame();
-            }
-        }
-
-        if (!Physics.Raycast(transform.position, Vector3.down, 1f))
-        {
-            gameOver = true;
-            Camera.main.GetComponent<FollowCam>().gameOver = true;
-            GameManager.instence.GameOver();
-        }
-
-
-        if (Input.GetMouseButtonDown(0) && !gameOver)
-        {
-            SwitchDirection();
-        }*/
 
     }
 
