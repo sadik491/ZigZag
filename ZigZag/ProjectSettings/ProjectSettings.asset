@@ -755,10 +755,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: c15be7da-4819-494e-8ecf-f81802b3ce08
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: zigzag
+  organizationId: sadik491
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
