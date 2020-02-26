@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -596,16 +596,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
-    - target: {fileID: 242740107985253570, guid: 841ee55e34e4d7d4a8b24b128af4d125,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 242740107985253570, guid: 841ee55e34e4d7d4a8b24b128af4d125,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 242740107985253582, guid: 841ee55e34e4d7d4a8b24b128af4d125,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1148,17 +1138,17 @@ PrefabInstance:
     - target: {fileID: 7546731534809870660, guid: 3532515a8b9311644b33f0b1c6bbb2a6,
         type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.6886792
+      value: 0.737707
       objectReference: {fileID: 0}
     - target: {fileID: 7546731534809870660, guid: 3532515a8b9311644b33f0b1c6bbb2a6,
         type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.6659398
+      value: 0.5223834
       objectReference: {fileID: 0}
     - target: {fileID: 7546731534809870660, guid: 3532515a8b9311644b33f0b1c6bbb2a6,
         type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.6790963
+      value: 0.8584906
       objectReference: {fileID: 0}
     - target: {fileID: 7546731534809870662, guid: 3532515a8b9311644b33f0b1c6bbb2a6,
         type: 3}
