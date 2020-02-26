@@ -13,13 +13,13 @@ public class BallControl : MonoBehaviour
     {
         started = false;
         gameOver = false;
-        //screenWidth = Screen.width;
         UIManager.instence.Welcome();
     }
 
    
     void Update()
     {
+        
 
         if (!Physics.Raycast(transform.position, Vector3.down, 1f))
         {
@@ -29,19 +29,30 @@ public class BallControl : MonoBehaviour
             GameManager.instence.GameOver();
         }
 
-        Touch touch = Input.GetTouch(0);
+        
 
-        if (Input.touchCount > 0 && !started)
+        if (Input.touchCount > 0)
         {
-            rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
-            started = true;
-            GameManager.instence.StartGame();
-        }
+            Touch touch = Input.GetTouch(0);
+            if (!started)
+            {
+                rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
+                started = true;
+                GameManager.instence.StartGame();
+            }
 
-        if (touch.phase == TouchPhase.Began && !gameOver)
-        {
+            if (touch.phase == TouchPhase.Began && !gameOver)
+            {
+
                 SwitchDirection();
+            }
+
         }
+        
+
+        
+
+
 
     }
 

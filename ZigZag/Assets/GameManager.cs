@@ -29,10 +29,4 @@ public class GameManager : MonoBehaviour
         UIManager.instence.GameOver();
         ScoreManager.instence.StopScore();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

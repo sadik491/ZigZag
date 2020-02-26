@@ -9,7 +9,8 @@ public class FloorCreator : MonoBehaviour
     float size;
     void Start()
     {
-        lastPosition =transform.position;
+        
+        lastPosition = transform.position;
         size = transform.localScale.x;
 
         for (int i = 0; i < 15; i++)
@@ -20,7 +21,6 @@ public class FloorCreator : MonoBehaviour
         InvokeRepeating("RandomFloor", 2f, .2f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Camera.main.GetComponent<FollowCam>().gameOver)

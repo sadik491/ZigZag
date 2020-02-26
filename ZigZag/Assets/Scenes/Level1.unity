@@ -277,6 +277,7 @@ RectTransform:
   - {fileID: 1157091149}
   - {fileID: 1662462711}
   - {fileID: 1265479043}
+  - {fileID: 2066143470}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -331,6 +332,7 @@ MonoBehaviour:
   welcomePanel: {fileID: 1662462710}
   gameOverPanel: {fileID: 1265479042}
   tapText: {fileID: 1157091148}
+  scoreUpdate: {fileID: 2066143469}
   score: {fileID: 902428323}
   welcomeHighScore: {fileID: 1712369837}
   gameOverHighScore: {fileID: 152878360}
@@ -439,6 +441,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2066143469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2066143470}
+  - component: {fileID: 2066143472}
+  - component: {fileID: 2066143471}
+  m_Layer: 5
+  m_Name: ScoreUpdate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2066143470
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066143469}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 430396641}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 476}
+  m_SizeDelta: {x: 363.7, y: 103}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2066143471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066143469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.028301895, g: 0.028301895, b: 0.028301895, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 86
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 94
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 000
+--- !u!222 &2066143472
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066143469}
+  m_CullTransparentMesh: 0
 --- !u!1 &2118641737
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +849,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: WelcomePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3159389458470068825, guid: 49c4b53490ddc964a8439fb6d86ada16,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159389459329083085, guid: 49c4b53490ddc964a8439fb6d86ada16,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49c4b53490ddc964a8439fb6d86ada16, type: 3}
 --- !u!1001 &3450148769983318888
@@ -857,6 +946,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TapText
+      objectReference: {fileID: 0}
+    - target: {fileID: 4519016445801089154, guid: 135b365dc210b3a408b15c95c781b678,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4519016445801089155, guid: 135b365dc210b3a408b15c95c781b678,
         type: 3}
@@ -1054,17 +1148,17 @@ PrefabInstance:
     - target: {fileID: 7546731534809870660, guid: 3532515a8b9311644b33f0b1c6bbb2a6,
         type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.43298328
+      value: 0.6886792
       objectReference: {fileID: 0}
     - target: {fileID: 7546731534809870660, guid: 3532515a8b9311644b33f0b1c6bbb2a6,
         type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.6243193
+      value: 0.6659398
       objectReference: {fileID: 0}
     - target: {fileID: 7546731534809870660, guid: 3532515a8b9311644b33f0b1c6bbb2a6,
         type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.6603774
+      value: 0.6790963
       objectReference: {fileID: 0}
     - target: {fileID: 7546731534809870662, guid: 3532515a8b9311644b33f0b1c6bbb2a6,
         type: 3}
@@ -1139,6 +1233,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameOverPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980872099910232396, guid: be4d4420b3ab94147b370078142c7aea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7980872099910232397, guid: be4d4420b3ab94147b370078142c7aea,
         type: 3}

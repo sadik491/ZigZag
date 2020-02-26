@@ -7,11 +7,6 @@ public class ScoreManager : MonoBehaviour
     public int score;
     public int highScore;
 
-    void Start()
-    {
-        score = 0;
-        PlayerPrefs.SetInt("score", score);
-    }
     void Awake()
     {
         if (instence == null)
@@ -19,12 +14,16 @@ public class ScoreManager : MonoBehaviour
             instence = this;
         }
     }
+    void Start()
+    {
+        score = 0;
+        PlayerPrefs.SetInt("score", score);
+    }
+    
 
-    // Update is called once per frame
-    void IncrementScore()
+    public void IncrementScore()
     {
         score += 1;
-        
     }
 
     public void StartScore()

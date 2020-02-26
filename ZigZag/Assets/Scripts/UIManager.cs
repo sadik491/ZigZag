@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public GameObject welcomePanel;
     public GameObject gameOverPanel;
     public GameObject tapText;
+    public GameObject scoreUpdate;
     public Text score;
     public Text welcomeHighScore;
     public Text gameOverHighScore;
@@ -25,6 +26,8 @@ public class UIManager : MonoBehaviour
     public void GameStart()
     {
         tapText.SetActive(false);
+        scoreUpdate.SetActive(true);
+        scoreUpdate.GetComponent<Text>().text = PlayerPrefs.GetInt("score").ToString("0");
         welcomePanel.GetComponent<Animator>().Play("WelcomePanal");
     }
 
@@ -35,6 +38,7 @@ public class UIManager : MonoBehaviour
 
     public void GameOver()
     {
+        scoreUpdate.SetActive(false);
         score.text = PlayerPrefs.GetInt("score").ToString();
         gameOverHighScore.text = PlayerPrefs.GetInt("highScore").ToString();
         gameOverPanel.SetActive(true);
